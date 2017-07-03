@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link href="css/Myname.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/fontsize.js"></script>
+</head>
+<body>
+<div class="container">
+    <img src="img/yue.jpg" class="img100 img-dong" >
+    <audio src="img/xiang.mp3" autoplay id="audio_1"></audio>
+    <div class="yi">
+        <p>个</p>
+        <p>人</p>
+        <p>简</p>
+        <p>历</p>
+        <img src="img/yi.png">
+        <div class="zhu">
+            <span class="spa1"></span>
+            <span class="spa2"></span>
+            <span class="spa3"></span>
+            <span class="spa4"></span>
+        </div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <h4>MY RESUME</h4>
+    </div>
+    <div class="er down">
+        <div class="da"></div>
+        <div class="xiao"></div>
+            <h3>偶像：张杰</h3>
+            <div>
+                <p>姓名：何鑫蕊</p>
+                <p>座右铭：不因曲解而忘记初衷，不因冷落而怀疑信念</p>
+                <p>星座：天秤座</p>
+                <p>身高：166cm</p>
+                <p>体重：54kg</p>
+                <p>最喜欢的城市：云南</p>
+                <p>电话：15511921918</p>
+                <p>微信：hebuer1007</p>
+            </div>
+    </div>
+    <div class="si down">
+        <h3>爱好</h3>
+        <p class="quan1">旅行</p>
+        <p class="quan2">吃</p>
+        <p class="quan3">听音乐</p>
+        <img src="img/piao.jpg" class="im1" />
+        <img src="img/tian.jpg" class="im2" />
+        <img src="img/tutu1.jpg" class="im3" />
+    </div>
+    <div class="wu down">
+        <p class="pp1">CSS3</p>
+        <img src="img/im2.jpeg" class="img1">
+        <span class="sp1">主要内容为动画类型，可简单添加动画</span>
+        <p class="pp2">HTML5</p>
+        <img src="img/im2.jpeg" class="img2">
+        <span class="sp2">主要为HTML中新增标签，例如音频，视频等..</span>
+        <p class="pp3">jQuery</p>
+        <img src="img/im2.jpeg" class="img3">
+        <span class="sp3">主要有选择器，可以更好的选择你想要找的，还可添加事件，使网页更加生动</span>
+        <p class="pp4">Javascript</p>
+        <img src="img/im2.jpeg" class="img4">
+        <span class="sp4">是一种计算机语言，与之前所接触的都不同，个人觉得很有意思</span>
+    </div>
+    <div class="qi down">
+        <h3>感谢您的观看 欢迎您的来电</h3>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/touch.js"></script>
+<script>
+    var swipe = 0;
+    $(".container>div").eq(0).siblings().children().addClass("yin");
+    $(".container").swipeUp(function () {
+        if (swipe < 4) {
+            $(".container>div").eq(swipe).addClass("up");
+            $(".container>div").eq(swipe).children().addClass("yin");
+            swipe++;
+            $(".container>div").eq(swipe).children().removeClass("yin");
+            $(".container>div").eq(swipe).removeClass("down");
+        }
+    })
+    //向上滑动
+    $(".container").swipeDown(function () {
+        if (swipe > 0) {
+            $(".container>div").eq(swipe).addClass("down");
+            $(".container>div").eq(swipe).children().addClass("yin");
+            swipe--;
+            $(".container>div").eq(swipe).children().removeClass("yin");
+            $(".container>div").eq(swipe).removeClass("up");
+        }
+    })
+    //向下滑动
+
+    //为音乐设置样式
+    $(".container .img100").tap(function () {
+        if (document.querySelector("#audio_1").paused == true) {
+            document.querySelector("#audio_1").play();
+            $(".img100").addClass("img-dong");
+        }
+        else {
+            document.querySelector("#audio_1").pause();
+            $(".img100").removeClass("img-dong");
+        }
+    })
+</script>
+</html>
